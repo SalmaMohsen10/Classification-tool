@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>استطلاع رأي</title>
+<link rel="stylesheet" href="styles.css"> </head>
+<body>
+  
+  <div class="top">خامساً : التصور  </div>
+
+  <div class="one">تصنيف المستند:</div>
+
+
+  <div class="thin">
+   <b class="two">قياس الأثر</b>
+
+
+   
+    <form id="checkboxForm" onsubmit="return validateForm()">
+    <div class="question">
+      <p>1-هل يؤدي الوصول غير المصرح به إلى هذه البيانات أو الإفصاح عنها أو عن محتواها إلى ضرر جسيم واستثنائي لا يمكن تداركه أو إصلاحه على المصالح الوطنية أو أداء الجهات العامة أو صحة الأفراد وسلامتهم أو الموارد البيئية والطبيعية؟
+      <a href="read_more1.html">اقرأ أكثر</a> </p> 
+    
+      <div class="checkbox-container">
+        <label for="checkbox1" class="yes">نعم</label>
+        <input type="radio" id="checkbox1" class="styled-checkbox" name="question1" onclick="handle('first')"
+        >
+    
+        <label for="checkbox2" class="no">لا</label>
+        <input type="radio" id="checkbox2" class="second-checkbox" name="question1" onclick="Del()"> 
+      </div> 
+    </div>
+
+
+    <div class="question">
+      <p>2- هل يؤدي الوصول غير المصرح به إلى هذه البيانات أو الإفصاح عنها أو عن محتواها إلى ضرر جسيم على المصالح الوطنية بشكل جزئي او يحدث خسارة مالية او يتسبب بحدوث أذى جسيم على صحة مجموعة من الافراد او يؤدي الى ضرر على المدى الطويل للموارد البيئية والطبيعية؟ <a href="read_more2.html">اقرأأكثر</a></p>
+    
+      <div class="checkbox-container">
+        <label for="checkbox3" class="yes">نعم</label>
+        <input type="radio" id="checkbox3" class="styled-checkbox" name="question2" onclick="handle('second')"
+        >
+    
+        <label for="checkbox4" class="no">لا</label>
+        <input type="radio" id="checkbox4" class="second-checkbox" name="question2" onclick="Del()">
+      </div>
+    </div>
+
+    <div class="question">
+      <p>3- هل يؤدي الوصول غير المصرح به إلى هذه البيانات أو الإفصاح عنها أو عن محتواها:
+      <a href="read_more3.html">اقرأأكثر</a></p>
+
+      <ul>
+        <li>تأثير سلبي محدود على عمل الجهات العامة او الانشطة </li>
+        <li>الاقتصادية في المملكة او على عمل شخص معين</li>
+        <li>ضرر محدود على اصول اي جهة و خسارة محدودة على وضعها المالي و التنافسي</li>
+        <li>ضرر محدود على المدى القريب للموارد البيئية او الطبيعية
+        </li>
+    </ul>
+
+    <div class="checkbox-container">
+      <label for="checkbox5" class="yes">نعم</label>
+      <input type="radio" name="question3" id="checkbox5" class="styled-checkbox" onclick="handle('third')"
+      >
+  
+      <label for="checkbox6" class="no">لا</label>
+      <input type="radio" name="question3" id="checkbox6" class="second-checkbox" onclick="Del()">
+    </div>
+    </div>
+
+    <div class="question">
+      <p>4-الوصول غير المصرح به لهذه البيانات لا يترتب عليه اي اثر؟<a href="read_more4.html">اقرأأكثر</a></p>
+    
+      <div class="checkbox-container">
+        <label for="checkbox7" class="yes">نعم</label>
+        <input type="radio" id="checkbox7" class="styled-checkbox" name="question4" onclick="handle('fourth')"
+        >
+    
+        <label for="checkbox8" class="no">لا</label>
+        <input type="radio" id="checkbox8" class="second-checkbox" name="question4" onclick="Del()">
+      </div>
+    </div>
+    <div class="result" id="result"></div>
+    <div class="bar" id="bar"></div>
+    
+  <div class="buttons">
+    <button class="one">إرسال</button>
+    <button class="two" onclick="deleteAllAnswers()">مسح الإجابات</button>
+  </div>
+  </div>
+  </div>
+  </form>
+
+  
+
+  <script>
+    function deleteAllAnswers() {
+      // Get all checkboxes with the class 'styled-checkbox' and 'second-checkbox'
+      var checkboxes = document.querySelectorAll('.styled-checkbox, .second-checkbox');
+
+      // Uncheck all checkboxes
+      checkboxes.forEach(function(checkbox) {
+        checkbox.checked = false;
+      });
+    }
+    function validateForm() {
+        var questions = document.querySelectorAll('.question');
+
+        for (var i = 0; i < questions.length; i++) {
+          var checkboxes = questions[i].querySelectorAll('.styled-checkbox, .second-checkbox');
+          var checked = false;
+
+          for (var j = 0; j < checkboxes.length; j++) {
+            if (checkboxes[j].checked) {
+              checked = true;
+              break;
+            }
+          }
+
+          if (!checked) {
+            alert('برجاء اجابة جميع الاسئلة قبل الارسال');
+            return false; // Prevent form submission
+          }
+        }
+
+        return true; // Allow form submission
+      }
+    
+
+      function handle(type) {
+    if (type === "first") {
+        handleQuestion1();}
+     else if (type === "second") {
+        if(res=="red")
+        {
+          return;
+        }}
+        else if(res==0){
+        handleQuestion2();}
+     else if (type === "third") {
+        handleQuestion3();
+    } else if (type === "fourth") {
+        handleQuestion4();
+    }}
+
+      function handleQuestion1() {
+      document.getElementById('result').innerText = 'سري للغاية';
+      document.getElementById('result').classList.add('underline-dark-red');
+      var res="red"
+                                 }
+      function handleQuestion2() {
+      document.getElementById('result').innerText = 'سري ';
+      document.getElementById('result').classList.add('underline-white-red');
+    var res="whit"               
+    }
+      function handleQuestion3() {
+      document.getElementById('result').innerText = 'مقيد';
+      document.getElementById('result').classList.add('underline-orange-red');
+      var res="ora"                            
+    }
+      function handleQuestion4() {
+      document.getElementById('result').innerText = 'عام';
+      document.getElementById('result').classList.add('underline-green-red');
+      var res="green"
+                                 }
+
+      function Del() {
+      var res=0
+                                 }
+
+  </script>  
+</body>
+</html>
+
+

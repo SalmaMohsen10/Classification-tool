@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>استطلاع رأي</title>
+  <style>
+    /* Add the new styles for different underlines */
+    .underline-dark-red {
+      text-decoration: underline darkred;
+    }
+
+    .underline-white-red {
+      text-decoration: underline white;
+    }
+
+    .underline-orange-red {
+      text-decoration: underline orange;
+    }
+
+    .underline-green-red {
+      text-decoration: underline green;
+    }
+  </style>
+</head>
+<body>
+  <div class="top">خامساً: التصور</div>
+  <div class="one">تصنيف المستند:</div>
+  <div class="thin" id="thinContainer">
+    <b class="two">قياس الأثر</b>
+    <form id="checkboxForm" onsubmit="return validateForm()">
+      <div class="question">
+        <p>1-هل يؤدي الوصول غير المصرح به إلى هذه البيانات أو الإفصاح عنها أو عن محتواها إلى ضرر جسيم واستثنائي لا يمكن تداركه أو إصلاحه على المصالح الوطنية أو أداء الجهات العامة أو صحة الأفراد وسلامتهم أو الموارد البيئية والطبيعية؟
+          <a href="read_more1.html">اقرأ أكثر</a>
+        </p> 
+        <div class="checkbox-container">
+          <label for="checkbox1" class="yes">نعم</label>
+          <input type="radio" id="checkbox1" class="styled-checkbox" name="question1" onclick="handleQuestion1()">
+          <label for="checkbox2" class="no">لا</label>
+          <input type="radio" id="checkbox2" class="second-checkbox" name="question1" onclick="handleQuestion1()">
+        </div> 
+      </div>
+
+      <div class="question">
+        <p>2- هل يؤدي الوصول غير المصرح به إلى هذه البيانات أو الإفصاح عنها أو عن محتواها إلى ضرر جسيم على المصالح الوطنية بشكل جزئي أو يحدث خسارة مالية أو يتسبب بحدوث أذى جسيم على صحة مجموعة من الأفراد أو يؤدي الى ضرر على المدى الطويل للموارد البيئية والطبيعية؟ <a href="read_more2.html">اقرأ أكثر</a></p>
+        <div class="checkbox-container">
+          <label for="checkbox3" class="yes">نعم</label>
+          <input type="radio" id="checkbox3" class="styled-checkbox" name="question2">
+          <label for="checkbox4" class="no">لا</label>
+          <input type="radio" id="checkbox4" class="second-checkbox" name="question2">
+        </div>
+      </div>
+
+      <div class="question">
+        <p>3- هل يؤدي الوصول غير المصرح به إلى هذه البيانات أو الإفصاح عنها أو عن محتواها:
+          <a href="read_more3.html">اقرأ أكثر</a>
+        </p>
+        <ul>
+          <li>تأثير سلبي محدود على عمل الجهات العامة أو الأنشطة </li>
+          <li>الاقتصادية في المملكة أو على عمل شخص معين</li>
+          <li>ضرر محدود على أصول أي جهة وخ</li>
+          <!-- Other options ... -->
+        </ul>
+        <div class="checkbox-container">
+          <label for="checkbox5" class="yes">نعم</label>
+          <input type="radio" name="question3" id="checkbox5" class="styled-checkbox">
+          <label for="checkbox6" class="no">لا</label>
+          <input type="radio" name="question3" id="checkbox6" class="second-checkbox">
+        </div>
+      </div>
+
+      <!-- Add more questions... -->
+
+      <div class="buttons">
+        <button class="one">إرسال</button>
+        <button class="two" onclick="deleteAllAnswers()">مسح الإجابات</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function deleteAllAnswers() {
+      // Get all checkboxes with the class 'styled-checkbox' and 'second-checkbox'
+      var checkboxes = document.querySelectorAll('.styled-checkbox, .second-checkbox');
+
+      // Uncheck all checkboxes
+      checkboxes.forEach(function(checkbox) {
+        checkbox.checked = false;
+      });
+
+      // Reset the underline color
+      document.getElementById('thinContainer').classList.remove('underline-dark-red');
+    }
+
+    function handleQuestion1() {
+      // Check if "Yes" is selected for the first question
+      var checkbox1 = document.getElementById('checkbox1');
+      if (checkbox1.checked) {
+        // If yes, set the underline color to red
+        document.getElementById('thinContainer').classList.add('underline-dark-red');
+      } else {
+        // If no, reset the underline color
+        document.getElementById('thinContainer').classList.remove('underline-dark-red');
+      }
+    }
+  </script>
+</body>
+</html>
