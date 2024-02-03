@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <img src="check.jpg" alt="Check Mark" class="sub" />
+    <p class="cong">لقد انتهينا!</p>
+
+    <div id="result-container" class="file">
+      <!-- JavaScript will update the result here -->
+      <p>   نتيجة تصنيف.</p>
+    </div>
+
+    <!-- <script>
+      // Function to get URL parameters
+      function getUrlParameter(name) {
+        name = name.replace(/[[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+        var results = regex.exec(location.search);
+        return results === null
+          ? ""
+          : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+
+      // Get the classification result from the URL
+      var classificationResult = getUrlParameter("classificationResult");
+
+      // Update the result-container with the classification result
+      var resultContainer = document.getElementById("result-container");
+      if (classificationResult !== "") {
+        resultContainer.innerHTML = "<p>" + classificationResult + "</p>";
+      } else {
+        resultContainer.innerHTML = "<p>لم يتم توفير نتيجة تصنيف.</p>";
+      }
+    </script> -->
+  </body>
+</html>
