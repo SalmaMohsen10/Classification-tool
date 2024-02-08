@@ -12,7 +12,7 @@
   <div class="thin">
     <b class="two">قياس الأثر</b>
 
-    <form id="checkboxForm" action="./submit.php" method="get">
+    <form id="checkboxForm" action="./submit.php" method="get" onsubmit="return validateForm()">
 
       <div class="question">
         <p>
