@@ -25,10 +25,11 @@
 
         <div class="checkbox-container">
           <label for="checkbox1" class="yes">نعم</label>
-          <input type="radio" id="checkbox1" class="styled-checkbox" name="question1" />
+          <input type="radio" id="checkbox1" class="styled-checkbox" name="question1" value="yes" />
+
 
           <label for="checkbox2" class="no">لا</label>
-          <input type="radio" id="checkbox2" class="second-checkbox" name="question1" />
+          <input type="radio" id="checkbox2" class="second-checkbox" name="question1" value="no" />
         </div>
       </div>
 
@@ -43,10 +44,11 @@
 
         <div class="checkbox-container">
           <label for="checkbox3" class="yes">نعم</label>
-          <input type="radio" id="checkbox3" class="styled-checkbox" name="question2" />
+          <input type="radio" id="checkbox3" class="styled-checkbox" name="question2" value="yes" />
+
 
           <label for="checkbox4" class="no">لا</label>
-          <input type="radio" id="checkbox4" class="second-checkbox" name="question2" />
+          <input type="radio" id="checkbox4" class="second-checkbox" name="question2" value="no" />
         </div>
       </div>
 
@@ -69,10 +71,11 @@
 
         <div class="checkbox-container">
           <label for="checkbox5" class="yes">نعم</label>
-          <input type="radio" name="question3" id="checkbox5" class="styled-checkbox" />
+          <input type="radio" name="question3" id="checkbox5" class="styled-checkbox" value="yes" />
+
 
           <label for="checkbox6" class="no">لا</label>
-          <input type="radio" name="question3" id="checkbox6" class="second-checkbox" />
+          <input type="radio" name="question3" id="checkbox6" class="second-checkbox" value="no" />
         </div>
       </div>
 
@@ -83,10 +86,11 @@
 
         <div class="checkbox-container">
           <label for="checkbox7" class="yes">نعم</label>
-          <input type="radio" id="checkbox7" class="styled-checkbox" name="question4" />
+          <input type="radio" id="checkbox7" class="styled-checkbox" name="question4" value="yes" />
+
 
           <label for="checkbox8" class="no">لا</label>
-          <input type="radio" id="checkbox8" class="second-checkbox" name="question4" />
+          <input type="radio" id="checkbox8" class="second-checkbox" name="question4" value="no" />
         </div>
       </div>
       <div class="result" id="result"></div>

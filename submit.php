@@ -17,20 +17,27 @@
     <?php
     // Initialize classification result
     $classificationResult = '';
+    // die($_GET);
 
-    // Check if the question parameters are set in the URL
+    // Check if all question parameters are set in the URL
     if (isset($_GET['question1']) && isset($_GET['question2']) && isset($_GET['question3']) && isset($_GET['question4'])) {
       // Process the answers
-      if ($_GET['question1'] === 'on') {
+      $answer1 = $_GET['question1'];
+      $answer2 = $_GET['question2'];
+      $answer3 = $_GET['question3'];
+      $answer4 = $_GET['question4'];
+
+      // Check the value of each answer and determine the classification result
+      if ($answer1 === 'yes') {
         // Question 1 logic
         $classificationResult = "سري للغاية";
-      } elseif ($_GET['question2'] === 'on') {
+      } elseif ($answer2 === 'yes') {
         // Question 2 logic
         $classificationResult = "سري";
-      } elseif ($_GET['question3'] === 'on') {
+      } elseif ($answer3 === 'yes') {
         // Question 3 logic
         $classificationResult = "مقيد";
-      } elseif ($_GET['question4'] === 'on') {
+      } elseif ($answer4 === 'yes') {
         // Question 4 logic
         $classificationResult = "عام";
       } else {
